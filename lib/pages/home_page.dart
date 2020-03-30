@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animx/animation_demo/animated_container.dart';
 import 'package:flutter_animx/blocs/bloc_animated_container.dart';
+import 'package:flutter_animx/blocs/bloc_other_animated.dart';
 import 'package:flutter_animx/blocs/bloc_provider.dart';
 import 'package:flutter_animx/models/b_animated_container.dart';
 import 'package:flutter_animx/models/datas.dart';
 import 'package:flutter_animx/models/material_design.dart';
 import 'package:flutter_animx/models/section.dart';
+import 'package:flutter_animx/pages/other_animated_page.dart';
+import 'package:flutter_animx/widgets/tile.dart';
 
 class HomePage extends StatelessWidget {
   List<Section> _sections = [
@@ -27,17 +30,13 @@ class HomePage extends StatelessWidget {
         ),
         child: AnimatedContainerDemo(),
       ),
-    )
+    ),
+    Section(
+      name: 'Other Animated',
+      icon: Icons.local_movies,
+      destination: OtherAnimatedPage(),
+    ),
   ];
-
-  ListTile tile(BuildContext context, Section section) {
-    return ListTile(
-      leading: Icon(section.icon),
-      title: Text(section.name),
-      trailing: Icon(Icons.arrow_forward_ios),
-      onTap: () => Datas().pusher(context, section.name, section.destination),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +53,7 @@ class HomePage extends StatelessWidget {
         title: Text("Flutter Animations"),
       ),
       body: ListView.separated(
-        itemBuilder: (ctx, i) => tile(context, _sections[i]),
+        itemBuilder: (ctx, i) => Tile(section: _sections[i]),
         separatorBuilder: (ctx, i) => MyDivider(),
         itemCount: _sections.length,
       ),

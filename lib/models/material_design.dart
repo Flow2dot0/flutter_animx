@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animx/models/datas.dart';
 
 class MyDivider extends Divider {
   MyDivider() : super(color: Colors.blue, thickness: 1);
@@ -14,4 +15,8 @@ class MyScaffold extends Scaffold {
               title: Text(title),
             ),
             body: destination);
+}
+
+class EmptyWidget extends Center {
+  EmptyWidget() : super(child: Image.asset(Datas().flutter));
 }
