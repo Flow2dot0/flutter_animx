@@ -40,13 +40,22 @@ class BlocAnimatedContainer extends BlocBase {
     sync();
   }
 
-  BlocAnimatedContainer({@required BAnimatedContainer bAnimatedContainer}) {
-    model = bAnimatedContainer;
+  BlocAnimatedContainer() {
+    model = BAnimatedContainer(
+      duration: Duration(milliseconds: 500),
+      min: 0,
+      max: 300.0,
+      heightValue: 150.0,
+      widthValue: 150.0,
+      color: Colors.blue,
+      shadow: true,
+      radius: true,
+    );
     sync();
   }
 
   @override
   void dispose() {
-    _subject.close();
+    print('Dispose of Bloc Animated Container');
   }
 }

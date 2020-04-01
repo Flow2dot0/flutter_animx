@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animx/blocs/base_provider.dart';
 import 'package:flutter_animx/blocs/bloc_animated_container.dart';
 import 'package:flutter_animx/blocs/bloc_provider.dart';
 import 'package:flutter_animx/models/b_animated_container.dart';
@@ -16,7 +17,7 @@ class AnimatedContainerDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<BlocAnimatedContainer>(context);
+    final bloc = GetBloc.of<BlocAnimatedContainer>(context);
 
     return StreamBuilder<BAnimatedContainer>(
       stream: bloc.stream,

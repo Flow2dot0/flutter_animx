@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animx/animation_demo/animated_builder.dart';
 import 'package:flutter_animx/animation_demo/animated_container.dart';
+import 'package:flutter_animx/animation_demo/animated_list_demo.dart';
+import 'package:flutter_animx/animation_demo/animated_physical.dart';
+import 'package:flutter_animx/animation_demo/animation_listener.dart';
+import 'package:flutter_animx/animation_demo/graph.dart';
+import 'package:flutter_animx/animation_demo/tinder_anim.dart';
 import 'package:flutter_animx/blocs/bloc_animated_container.dart';
+import 'package:flutter_animx/blocs/bloc_opacity.dart';
 import 'package:flutter_animx/blocs/bloc_other_animated.dart';
 import 'package:flutter_animx/blocs/bloc_provider.dart';
 import 'package:flutter_animx/models/b_animated_container.dart';
 import 'package:flutter_animx/models/datas.dart';
 import 'package:flutter_animx/models/material_design.dart';
 import 'package:flutter_animx/models/section.dart';
+import 'package:flutter_animx/pages/hero_list.dart';
+import 'package:flutter_animx/pages/menu_page.dart';
 import 'package:flutter_animx/pages/other_animated_page.dart';
+import 'package:flutter_animx/pages/transition_list.dart';
 import 'package:flutter_animx/widgets/tile.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,27 +25,45 @@ class HomePage extends StatelessWidget {
     Section(
       name: 'Animated Container',
       icon: Icons.score,
-      destination: BlocProvider<BlocAnimatedContainer>(
-        bloc: BlocAnimatedContainer(
-          bAnimatedContainer: BAnimatedContainer(
-            duration: Duration(seconds: 2),
-            min: 0,
-            max: 300.0,
-            heightValue: 150.0,
-            widthValue: 150.0,
-            color: Colors.blue,
-            shadow: true,
-            radius: true,
-          ),
-        ),
-        child: AnimatedContainerDemo(),
-      ),
+      destination: AnimatedContainerDemo(),
     ),
     Section(
       name: 'Other Animated',
       icon: Icons.local_movies,
       destination: OtherAnimatedPage(),
     ),
+    Section(
+      name: 'Hero',
+      icon: Icons.flash_on,
+      destination: HeroList(),
+    ),
+    Section(
+        name: 'Animated List',
+        icon: Icons.list,
+        destination: AnimatedListDemo()),
+    Section(
+      name: 'Transitions',
+      icon: Icons.compare_arrows,
+      destination: TransitionList(),
+    ),
+    Section(
+        name: 'Animated Builder',
+        icon: Icons.build,
+        destination: AnimatedBuilderDemo()),
+    Section(
+        name: 'Physical Model',
+        icon: Icons.menu,
+        destination: AnimatedPhysicalDemo()),
+    Section(name: 'Graphic', icon: Icons.show_chart, destination: Graph()),
+    Section(
+        name: 'Animation Listener',
+        icon: Icons.hearing,
+        destination: AnimationListenerDemo()),
+    Section(name: 'Animated Menu', icon: Icons.menu, destination: MenuPage()),
+    Section(
+        name: 'Animation Tinder',
+        icon: Icons.photo_library,
+        destination: TinderAnimDemo())
   ];
 
   @override

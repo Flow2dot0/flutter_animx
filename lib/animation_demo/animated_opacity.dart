@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animx/blocs/base_provider.dart';
+import 'package:flutter_animx/blocs/bloc_opacity.dart';
 import 'package:flutter_animx/blocs/bloc_other_animated.dart';
-import 'package:flutter_animx/blocs/bloc_provider.dart';
 import 'package:flutter_animx/models/b_other_animated.dart';
 import 'package:flutter_animx/models/datas.dart';
 
@@ -28,7 +29,7 @@ class AnimatedOpacityDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<BlocOtherAnimated>(context);
+    final bloc = GetBloc.of<BlocOtherAnimated>(context);
 
     return StreamBuilder<BOtherAnimated>(
       stream: bloc.stream,

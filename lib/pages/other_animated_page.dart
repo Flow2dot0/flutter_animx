@@ -5,6 +5,7 @@ import 'package:flutter_animx/animation_demo/animated_position.dart';
 import 'package:flutter_animx/animation_demo/animated_size.dart';
 import 'package:flutter_animx/animation_demo/animated_text.dart';
 import 'package:flutter_animx/animation_demo/fade_in.dart';
+import 'package:flutter_animx/blocs/bloc_opacity.dart';
 import 'package:flutter_animx/blocs/bloc_other_animated.dart';
 import 'package:flutter_animx/blocs/bloc_provider.dart';
 import 'package:flutter_animx/models/material_design.dart';
@@ -21,42 +22,27 @@ class OtherAnimatedPage extends StatelessWidget {
     Section(
       name: 'Opacity',
       icon: Icons.menu,
-      destination: BlocProvider<BlocOtherAnimated>(
-        bloc: BlocOtherAnimated(),
-        child: AnimatedOpacityDemo(),
-      ),
+      destination: AnimatedOpacityDemo(),
     ),
     Section(
       name: 'Cross Fade',
       icon: Icons.menu,
-      destination: BlocProvider<BlocOtherAnimated>(
-        bloc: BlocOtherAnimated(),
-        child: AnimatedCrossFadeDemo(),
-      ),
+      destination: AnimatedCrossFadeDemo(),
     ),
     Section(
       name: 'TextStyle',
       icon: Icons.menu,
-      destination: BlocProvider<BlocOtherAnimated>(
-        bloc: BlocOtherAnimated(),
-        child: AnimatedTextStyleDemo(),
-      ),
+      destination: AnimatedTextStyleDemo(),
     ),
     Section(
       name: 'Size',
       icon: Icons.menu,
-      destination: BlocProvider<BlocOtherAnimated>(
-        bloc: BlocOtherAnimated(),
-        child: AnimatedSizeDemo(),
-      ),
+      destination: AnimatedSizeDemo(),
     ),
     Section(
       name: 'Positionning',
       icon: Icons.menu,
-      destination: BlocProvider<BlocOtherAnimated>(
-        bloc: BlocOtherAnimated(),
-        child: AnimatedPositionningDemo(),
-      ),
+      destination: AnimatedPositionningDemo(),
     ),
   ];
 

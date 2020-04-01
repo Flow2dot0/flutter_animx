@@ -3,7 +3,7 @@ import 'package:flutter_animx/models/b_other_animated.dart';
 import 'package:rxdart/rxdart.dart';
 
 class BlocOtherAnimated extends BlocBase {
-  final BOtherAnimated _bOtherAnimated = BOtherAnimated();
+  BOtherAnimated _bOtherAnimated = BOtherAnimated();
 
   BehaviorSubject<BOtherAnimated> _subject = BehaviorSubject<BOtherAnimated>();
   Stream<BOtherAnimated> get stream => _subject.stream;
@@ -44,6 +44,6 @@ class BlocOtherAnimated extends BlocBase {
 
   @override
   void dispose() {
-    _subject.close();
+    print('Dispose of BlocOtherAnimated');
   }
 }

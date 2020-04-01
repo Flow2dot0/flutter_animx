@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animx/blocs/base_provider.dart';
+import 'package:flutter_animx/blocs/bloc_animated_container.dart';
+import 'package:flutter_animx/blocs/bloc_other_animated.dart';
 import 'package:flutter_animx/pages/home_page.dart';
 
 void main() {

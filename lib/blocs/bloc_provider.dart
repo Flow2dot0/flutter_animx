@@ -23,6 +23,12 @@ class _BlocProviderState extends State<BlocProvider> {
   Widget build(BuildContext context) => widget.child;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   void dispose() {
     widget.bloc.dispose();
     super.dispose();
